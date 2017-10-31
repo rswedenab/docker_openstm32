@@ -8,7 +8,7 @@ RUN  echo \<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?\> > ./aut
   echo \<com.izforge.izpack.panels.licence.LicencePanel id=\"SWLicence\"/\> >> ./auto-install.xml  && \ 
   echo \<com.izforge.izpack.panels.licence.LicencePanel id=\"JRELicence\"/\> >> ./auto-install.xml  && \ 
   echo \<com.izforge.izpack.panels.target.TargetPanel id=\"TargetPanel_4\"\> >> ./auto-install.xml  && \ 
-  echo \<installpath>\/home\/kogo\/test\/build\</installpath\> >> ./auto-install.xml  && \ 
+  echo \<installpath\>\/home\/kogo\/test\/build\</installpath\> >> ./auto-install.xml  && \ 
   echo \</com.izforge.izpack.panels.target.TargetPanel\> >> ./auto-install.xml  && \ 
   echo \<com.izforge.izpack.panels.packs.PacksPanel id=\"PacksPanel_5\"\> >> ./auto-install.xml  && \ 
   echo \<pack index=\"0\" name=\"System Workbench for STM32\" selected=\"true\"/\> >> ./auto-install.xml  && \ 
