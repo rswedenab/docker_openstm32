@@ -19,4 +19,4 @@ RUN  echo \<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?\> > ./aut
   echo \<com.izforge.izpack.panels.install.InstallPanel id=\"InstallPanel_7\"/\> >> ./auto-install.xml  && \ 
   echo \<com.izforge.izpack.panels.process.ProcessPanel id=\"ProcessPanel_8\"/\> >> ./auto-install.xml  && \ 
   echo \<com.izforge.izpack.panels.finish.FinishPanel id=\"FinishPanel_9\"/\> >> ./auto-install.xml  && \ 
-  echo \</AutomatedInstallation\>" >> ./auto-install.xml
+  echo \</AutomatedInstallation\> >> ./auto-install.xml
