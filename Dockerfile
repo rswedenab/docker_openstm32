@@ -1,5 +1,4 @@
-FROM ubuntu:xenial
-# FROM ubuntu:14.04
+FROM ubuntu:14.04
 
 RUN dpkg --add-architecture i386 && \
 apt-get update && apt-get -y install build-essential vim-common wget git bzip2 make python libc6:i386 astyle clang && \
@@ -28,3 +27,6 @@ RUN  echo \<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?\> > ./aut
   echo \</AutomatedInstallation\> >> ./auto-install.xml && \
   cat ./auto-install.xml
   RUN ./install_sw4stm32_linux_64bits-latest.run -f auto-install.xml 
+  
+  RUN  cd /usr/local/SystemWorkbench/ && \
+  ls -la
