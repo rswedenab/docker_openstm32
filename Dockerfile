@@ -27,4 +27,4 @@ RUN  echo \<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?\> > ./aut
   echo \<com.izforge.izpack.panels.finish.FinishPanel id=\"FinishPanel_9\"/\> >> ./auto-install.xml  && \ 
   echo \</AutomatedInstallation\> >> ./auto-install.xml && \
   cat ./auto-install.xml
-  RUN ./install_sw4stm32_linux_64bits-latest.run auto-install.xml
+  RUN ./install_sw4stm32_linux_64bits-latest.run -f auto-install.xml 
