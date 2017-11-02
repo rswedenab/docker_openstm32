@@ -28,5 +28,6 @@ RUN  echo \<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?\> > ./aut
   cat ./auto-install.xml
   RUN ./install_sw4stm32_linux_64bits-latest.run -f auto-install.xml 
   
-  RUN  cd /usr/local/SystemWorkbench/ && \
-  ls -la
+  RUN  ls -la /usr/local/SystemWorkbench/&& \
+  tar -xf /usr/local/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.15.0.201708311556/tools/st-gnu-arm-gcc-6-2017-q2-update_gdb-5_4-2016q3-20160926-linux.tar.bz2  -C /usr/local/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.15.0.201708311556/tools &&\
+  PATH=/usr/local/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.15.0.201708311556/tools/st-gnu-arm-gcc-6-2017-q2-update_gdb-5_4-2016q3/bin:$PATH 
