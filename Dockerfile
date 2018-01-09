@@ -1,7 +1,6 @@
 FROM ubuntu:14.04
    
-RUN dpkg --add-architecture i386 && \
-apt-get upgrade -y && apt-get -y install software-properties-common && \
+RUN dpkg --add-architecture i386 && apt-get upgrade -y && \
 add-apt-repository ppa:webupd8team/java -y &&  apt-get update &&  apt-get install -y oracle-java8-installer
 
 
