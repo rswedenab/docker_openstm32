@@ -1,5 +1,4 @@
 FROM ubuntu:14.04
-FROM dockerfile/java:oracle-java8
 
 RUN dpkg --add-architecture i386 && \
 apt-get update && apt-get -y install build-essential vim-common wget git bzip2 make python libc6:i386 astyle clang && \
@@ -7,6 +6,21 @@ wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-l
 chmod a+x install_sw4stm32_linux_64bits-latest.run  && \
 mkdir -p /usr/local/SystemWorkbench/
 
+# Install Java.
+RUN \
+  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+  add-apt-repository -y ppa:webupd8team/java && \
+  apt-get update && \
+  apt-get install -y oracle-java8-installer && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/cache/oracle-jdk8-installer
+
+
+# Define working directory.
+WORKDIR /data
+
+# Define commonly used JAVA_HOME variable
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 
 RUN touch auto-install.xml
