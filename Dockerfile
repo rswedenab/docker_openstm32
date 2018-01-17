@@ -1,6 +1,6 @@
-FROM ubuntu:14.04
-FROM store/oracle/serverjre:8
-#FROM mlaccetti/docker-oracle-java8-ubuntu-16.04:latest
+#FROM ubuntu:14.04
+#FROM store/oracle/serverjre:8
+FROM mlaccetti/docker-oracle-java8-ubuntu-16.04:latest
  
 RUN dpkg --add-architecture i386 && \
   apt-get update && apt-get -y install build-essential vim-common wget git bzip2 make python libc6:i386 astyle clang && \
