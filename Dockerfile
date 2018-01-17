@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-FROM openjdk:8-jdk
+FROM dockerfile/java:oracle-java8
 
 RUN dpkg --add-architecture i386 && \
 apt-get update && apt-get -y install build-essential vim-common wget git bzip2 make python libc6:i386 astyle clang && \
