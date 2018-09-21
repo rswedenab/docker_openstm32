@@ -9,7 +9,8 @@ RUN wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bi
     chmod a+x install_sw4stm32_linux_64bits-latest.run && \
     mkdir -p /usr/local/SystemWorkbench/
   
-RUN add-apt-repository -y ppa:webupd8team/java && apt-get update && \
+RUN add-apt-repository ppa:webupd8team/java -y
+#&& apt-get update && \
     apt-get -y install oracle-java8-installer oracle-java8-set-default
 
 RUN touch auto-install.xml
