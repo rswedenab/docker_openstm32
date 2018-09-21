@@ -1,12 +1,16 @@
 FROM ubuntu:trusty
 
-# RUN add-apt-repository ppa:webupd8team/java -y
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get -y install oracle-java8-installer oracle-java8-set-default wget git && \
-  wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run && \
-  chmod a+x install_sw4stm32_linux_64bits-latest.run  && \
-  mkdir -p /usr/local/SystemWorkbench/
+RUN apt-get update && apt-get -y install software-properties-common python-software-properties \
+                                 build-essential vim-common wget git bzip2 make python astyle clang
 
+RUN wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run && \
+    chmod a+x install_sw4stm32_linux_64bits-latest.run && \
+    mkdir -p /usr/local/SystemWorkbench/
+  
+RUN add-apt-repository -y ppa:webupd8team/java && apt-get update && \
+    apt-get -y install oracle-java8-installer oracle-java8-set-default
 
 RUN touch auto-install.xml
 RUN  echo \<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?\> > ./auto-install.xml  && \ 
