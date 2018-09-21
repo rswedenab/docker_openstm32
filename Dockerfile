@@ -1,9 +1,9 @@
-#FROM ubuntu:14.04
-#FROM store/oracle/serverjre:8
-FROM mlaccetti/docker-oracle-java8-ubuntu-16.04:latest
- 
+FROM ubuntu:trusty
+
+RUN add-apt-repository ppa:webupd8team/java -y
+
 RUN dpkg --add-architecture i386 && \
-  apt-get update && apt-get -y install build-essential vim-common wget git bzip2 make python libc6:i386 astyle clang && \
+  apt-get update && apt-get -y install oracle-java8-installer oracle-java8-set-default wget git && \
   wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run && \
   chmod a+x install_sw4stm32_linux_64bits-latest.run  && \
   mkdir -p /usr/local/SystemWorkbench/
